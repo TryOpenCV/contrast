@@ -2,7 +2,7 @@ import numpy as np
 from PIL import Image, ImageDraw
 import matplotlib.pyplot as plt
 
-n = int(input('n: '))
+n = input('n: ')
 image = Image.open("lenna.bmp")
 draw = ImageDraw.Draw(image)
 width = image.size[0]
@@ -78,7 +78,7 @@ for i in range(width - 2):
 
         zc = (mid1 + mid2 + mid3 + mid4 + mid6 + mid7 + mid8 + mid9) / 8
         z = mid5
-        Cz = np.abs(z - zc) / z + zc
+        Cz = np.abs(z - zc) / (z + zc)
         Cz **= n
 
         if z < zc:
